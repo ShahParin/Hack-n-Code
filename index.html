@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>SMS</title>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<link href="main.css" type="text/css" rel="stylesheet">
+	
+	</head>
+	
+	<body>
+		<h1>Greivance Redressal</h1>
+			<div>
+				<form name="firstform" id="firstform" method="post">
+					<p id="p1">
+						<label>Full Name</label><input type="text" name="name" id="name" size="35" value="" />
+					</p>
+					<p id="p2">
+						<label>Flat No.</label><input type="text" name="flat" id="flat" size="35" value="" />
+					</p>
+					<p id="p3">
+						<label>Contact</label><input type="tel" name="email" id="email" size="35" value="" />
+					</p>
+					<p id="p4">
+						<label>Criteria</label><select type="text" name="crit" id="crit" size="3" value=""> 
+						<option label="Parking">Parking</option>
+						<option label="Festival">Festival</option>
+						<option label="Maintenance">Maintenance</option>
+						</select>
+					</p>
+					<p id="p5">
+						<label>Comments</label><textarea name="newcom" cols="37" rows="10" id="newcom"></textarea>
+					</p>
+					<button type="button" onclick="writeToPage();">Add Comment</button>
+				</form>
+			</div>
+		<div id="pdada">
+			<table border="1">
+				<tr>
+					<th>NAME</th>
+					<th>DATE</th>
+					<th>CONTACT</th>
+					<th>CRITERIA</th>
+					<th>COMMENTS</th>
+				</tr>
+				<tr>
+					<td id="name"></td>
+					<td id="adate"></td>
+					<td id="pemail"></td>
+					<td id="crit"></td>
+					<td id="postedc"></td>
+				</tr>
+			</table>
+			</div>
+			<script>
+					var dt = new Date();
+
+			function writeToPage(){
+
+					var fn = document.getElementById("fname").value;
+					var un = document.getElementById("flat").value;
+					var em = document.getElementById("email").value;
+					var cr = document.getElementById("crit").value;
+				    var cm = document.getElementById("newcom").value;
+
+					if(fn === ""){
+						alert("Please fill out the Full Name field.");
+						document.getElementById("p1").style.color = "red";
+						document.getElementById("p1").style.fontFamily = "Arial";
+						document.getElementById("p1").style.fontSize = "larger"; 
+					}
+					else if(un === ""){
+						alert("Please fill out the Username field.");
+						document.getElementById("p2").style.color = "red";
+						document.getElementById("p2").style.fontFamily = "Arial";
+						document.getElementById("p2").style.fontSize = "larger";
+					}
+					else if(em === ""){
+						alert("Please fill out email field.");
+						document.getElementById("p3").style.color = "red";
+						document.getElementById("p3").style.fontFamily = "Arial";
+						document.getElementById("p3").style.fontSize = "larger";
+					}
+					else if(cr === ""){
+						alert("Please fill out the criteria section.");
+						document.getElementById("p4").style.color = "red";
+						document.getElementById("p4").style.fontFamily = "Arial";
+						document.getElementById("p4").style.fontSize = "larger";
+					}
+					else if(cm === ""){
+						alert("Please fill out the comment section.");
+						document.getElementById("p5").style.color = "red";
+						document.getElementById("p5").style.fontFamily = "Arial";
+						document.getElementById("p5").style.fontSize = "larger";
+					}
+					else{
+
+						document.getElementById("username").innerHTML = un;
+						document.getElementById("adate").innerHTML = dt;
+						document.getElementById("postedc").innerHTML = cm;
+						document.getElementById("crit").innerHTML = cm;
+						document.getElementById("pemail").innerHTML = em;
+					}	
+				}
+
+
+		</script>
+	</body>
+	
+</html>
